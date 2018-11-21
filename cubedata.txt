@@ -1,0 +1,308 @@
+# cube.jl data
+
+
+julia> import cube
+[ Info: Precompiling cube [top-level]
+
+julia> cube.mc(4,10000)
+ERROR: MethodError: no method matching iterate(::Nothing)
+Closest candidates are:
+  iterate(::Core.SimpleVector) at essentials.jl:589
+  iterate(::Core.SimpleVector, ::Any) at essentials.jl:589
+  iterate(::ExponentialBackOff) at error.jl:171
+  ...
+Stacktrace:
+ [1] mean(::typeof(identity), ::Nothing) at C:\cygwin\home\Administrator\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.0\Statistics\src\Statistics.jl:58
+ [2] mean(::Nothing) at C:\cygwin\home\Administrator\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.0\Statistics\src\Statistics.jl:42
+ [3] mc(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:16
+ [4] top-level scope at none:0
+
+julia> cube.mc(4,10000)
+(1.1203491935125323, 0.2738310197537672)
+
+julia> cube.showhist(4,10000)
+ERROR: UndefVarError: x not defined
+Stacktrace:
+ [1] showhist(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:23
+ [2] top-level scope at none:0
+
+julia> cube.showhist(4,10000)
+ERROR: UndefVarError: Plotly not defined
+Stacktrace:
+ [1] showhist(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:27
+ [2] top-level scope at none:0
+
+julia> cube.showhist(4,10000)
+ERROR: No user recipe defined for Pair{String,Any}
+Stacktrace:
+ [1] error(::String) at .\error.jl:33
+ [2] convertToAnyVector(::Pair{String,Any}, ::Dict{Symbol,Any}) at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\series.jl:14
+ [3] convertToAnyVector at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\series.jl:65 [inlined] (repeats 2 times)
+ [4] macro expansion at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\series.jl:138 [inlined]
+ [5] apply_recipe(::Dict{Symbol,Any}, ::Type{Plots.SliceIt}, ::Array{Array{Pair{String,Any},1},1}, ::Array{Pair{String,String},1}, ::Nothing) at C:\Users\SrLab\.julia\packages\RecipesBase\Uz5AO\src\RecipesBase.jl:275
+ [6] _process_userrecipes(::Plots.Plot{Plots.PlotlyBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Array{Pair{String,Any},1},1},Array{Pair{String,String},1}}) at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\pipeline.jl:83
+ [7] macro expansion at .\logging.jl:307 [inlined]
+ [8] _plot!(::Plots.Plot{Plots.PlotlyBackend}, ::Dict{Symbol,Any}, ::Tuple{Array{Array{Pair{String,Any},1},1},Array{Pair{String,String},1}}) at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\plot.jl:171
+ [9] #plot#132(::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Array{Array{Pair{String,Any},1},1}, ::Vararg{Any,N} where N) at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\plot.jl:57
+ [10] plot at C:\Users\SrLab\.julia\packages\Plots\rmogG\src\plot.jl:51 [inlined]
+ [11] showhist(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:28
+ [12] top-level scope at none:0
+
+julia> cube.showhist(4,10000)
+ArgumentError: Package Plotly not found in current path:
+- Run `import Pkg; Pkg.add("Plotly")` to install the Plotly package.
+
+import Plotly
+
+ERROR: UndefVarError: Plotly not defined
+Stacktrace:
+ [1] showhist(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:28
+ [2] top-level scope at none:0
+
+julia> cube.showhist(4,10000)
+ArgumentError: Package Plotly not found in current path:
+- Run `import Pkg; Pkg.add("Plotly")` to install the Plotly package.
+
+import Plotly
+
+
+julia> plot!([1:10])
+
+julia> cube.showhist(4,10000)
+ERROR: MethodError: no method matching -(::Array{Float64,1}, ::Float64)
+Closest candidates are:
+  -(::Float64, ::Float64) at float.jl:397
+  -(::Complex{Bool}, ::Real) at complex.jl:298
+  -(::Missing, ::Number) at missing.jl:93
+  ...
+Stacktrace:
+ [1] showhist(::Int64, ::Int64) at C:\Users\SrLab\Desktop\swan\cube.jl:28
+ [2] top-level scope at none:0
+
+julia> cube.showhist(4,10000)
+
+julia> cube.showhist(4,10000)
+
+julia> cube.showhist(4,10000)
+
+julia> cube.showhist(4,10000)
+
+julia> cube.showhist(4,10000)
+
+julia> cube.showhist(6,10000)
+
+julia> cube.showhist(10,10000)
+
+julia> cube.showhist(10,100000)
+
+julia> cube.showhist(20,100000)
+
+julia> cube.showhist(20,10000)
+
+julia> cube.showhist(20,100000)
+
+julia> cube.showhist(30,100000)
+
+julia> cube.showhist(50,100000)
+
+julia> cube.showhist(200,100000)
+
+julia> pts = cube.getpts(100,100000)
+100000-element Array{Any,1}:
+ 6.045855097808756
+ 5.807617908662487
+ 5.776766638756669
+ 6.02818579974459
+ 5.583861746373476
+ 6.208246871092796
+ 5.890083931175672
+ 5.994600105440646
+ 5.503715225595731
+ 5.816763637290425
+ 5.761898136107271
+ 5.628215045676707
+ 6.0534785155752795
+ 5.942822003811158
+ 5.783218358562404
+ 5.859621853325736
+ 5.854904279754406
+ 6.003105991639488
+ 5.639155899475305
+ 5.6661619777419965
+ 5.531505972703246
+ 5.548602169197744
+ 6.08184696307446
+ 5.875294567905779
+ 5.438147706382899
+ 5.591054948171703
+ 5.695270206879756
+ 5.757590679405179
+ 5.563453304442309
+ ⋮
+ 5.6396330542521245
+ 5.775241337474632
+ 5.531524063277086
+ 5.9149594402256405
+ 5.411607516326797
+ 6.0238397884365
+ 5.960595698768665
+ 5.847529811923873
+ 6.028382729571244
+ 4.903016394799988
+ 6.1391219363928435
+ 5.918403984162786
+ 6.03163525637703
+ 6.187679301068187
+ 5.7547556826982
+ 5.86943693750271
+ 6.005386813301163
+ 6.00261477810949
+ 5.9039224591411
+ 5.987842497871466
+ 5.440241670723799
+ 5.31016012591798
+ 5.937336053428224
+ 5.81466393163836
+ 5.300872822582415
+ 6.238846895817092
+ 5.491304249725285
+ 5.407488249441703
+ 5.594962012794119
+
+julia> means = [cube.mc(n,100000)[1] for n=4:100];
+
+julia> means.^2 ./([4:100;])
+97-element Array{Float64,1}:
+ 0.3153525170760478
+ 0.31925272445787783
+ 0.32121372037674817
+ 0.3233556709775506
+ 0.32468892043493636
+ 0.3256831869763046
+ 0.32583637812427935
+ 0.32708656935707053
+ 0.32742071300049064
+ 0.3282724717196548
+ 0.3280842190343715
+ 0.32814897342777843
+ 0.32940680464191835
+ 0.3293431945018297
+ 0.3297518016103942
+ 0.3297117161841987
+ 0.3301759395773881
+ 0.3300846177385563
+ 0.3300977945799252
+ 0.33072374188301124
+ 0.3308364554323462
+ 0.3306121967076182
+ 0.33068490345044543
+ 0.3309394908446202
+ 0.3309312523685198
+ 0.33081356877127144
+ 0.3310784714379245
+ 0.3311022453036853
+ 0.3312559262173097
+ ⋮
+ 0.33229850504670505
+ 0.33236583062070524
+ 0.3323917031688361
+ 0.3325606339850618
+ 0.3325114905341717
+ 0.33267320049461463
+ 0.33262462784174585
+ 0.33251789443593877
+ 0.3326343223071201
+ 0.3325919600178753
+ 0.33234753889190344
+ 0.33242814240113155
+ 0.3324627626506026
+ 0.3325251645778616
+ 0.33277361732036753
+ 0.3325065176285563
+ 0.33249495321982664
+ 0.3324255317799644
+ 0.3325049573280472
+ 0.3325771010318246
+ 0.3326853375835714
+ 0.3324596952809393
+ 0.3325215411003122
+ 0.33271129560903934
+ 0.33280189621249084
+ 0.33273841179733143
+ 0.332596510413084
+ 0.33274031259390374
+ 0.3325294131173968
+
+julia> means2 = [cube.mc(n,100000)[1] for n=100:100:2000];
+
+julia> means2.^2 ./([100:100:2000;])
+20-element Array{Float64,1}:
+ 0.3326741543178017
+ 0.33310205699342516
+ 0.3330639058643682
+ 0.3331350378009171
+ 0.3332232103903968
+ 0.3333050576563061
+ 0.3332027577064864
+ 0.3332599615107224
+ 0.33323914885209255
+ 0.33329305066094367
+ 0.3332752474243101
+ 0.33330016041131805
+ 0.333290833333141
+ 0.3332922904333965
+ 0.33329301429569574
+ 0.33331364801799274
+ 0.3332912367338856
+ 0.333310687853594
+ 0.33325980133504085
+ 0.3332943849083327
+
+julia> stdevs = [cube.mc(n,100000)[2] for n=100:100:2000]
+20-element Array{Float64,1}:
+ 0.2594178068798581
+ 0.2580355706731255
+ 0.2582825057352238
+ 0.25907765803158317
+ 0.25850160304056086
+ 0.2579382234940265
+ 0.25709705065361377
+ 0.2585079152286497
+ 0.2582285986770388
+ 0.2580309455944275
+ 0.2576277600543114
+ 0.25853550554872673
+ 0.25756873991487644
+ 0.2589886472289087
+ 0.2576813636588958
+ 0.25888925220039605
+ 0.2583998508241517
+ 0.25745617892875106
+ 0.25783201606453415
+ 0.25836673124025084
+
+julia> stdevs = [cube.mc(n,1000000)[2] for n=1000:1000:20000]
+20-element Array{Float64,1}:
+ 0.25829935338899573
+ 0.2582928331186916
+ 0.25830067017880454
+ 0.2579966459187461
+ 0.2582943659956195
+ 0.2581573618362635
+ 0.25845991908339155
+ 0.25843494086922697
+ 0.2582600468858266
+ 0.2580249483249213
+ 0.2579719051286096
+ 0.25837279915556494
+ 0.25807392892897874
+ 0.2582625021033321
+ 0.2580870750308287
+ 0.25813084107189327
+ 0.2580104874191728
+ 0.2581289247322033
+ 0.2584743930201704
+ 0.25816371130277976
+
+julia>sqrt(3/45)
+0.2581988897471611
